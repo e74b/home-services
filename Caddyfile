@@ -1,12 +1,11 @@
 {
-  pki {
-    ca local {
-      name "e74b Internal CA"
-    }
-  }
-  local_certs
+	pki {
+		ca local {
+			name "e74b Internal CA"
+		}
+	}
+	local_certs
 }
-
 
 navidrome.e74b.net {
 	reverse_proxy 127.0.0.1:4533
@@ -17,10 +16,14 @@ git.e74b.net {
 }
 
 cockpit.e74b.net {
-	reverse_proxy 127.0.0.1:9090
+	reverse_proxy https://127.0.0.1:9090 {
+		transport http {
+			tls_insecure_skip_verify
+		}
+	}
 }
 
 http://cert.e74b.net http://* {
-  root * ./public
-  file_server 
+	root * ./public
+	file_server
 }
