@@ -17,7 +17,7 @@ reload:
 	systemctl --user daemon-reload
 
 start:
-	systemctl --user start stack
+	systemctl --user start stack.target
 
 stop:
-	systemctl --user stop stack
+	systemctl --user stop stack.target
