@@ -1,0 +1,11 @@
+[Unit]
+Description=Caddy
+PartOf=stack.target
+
+[Service]
+Type=simple
+ExecStart=caddy run
+WorkingDirectory=%h/home-services
+
+[Install]
+WantedBy=stack.target

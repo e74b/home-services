@@ -21,3 +21,6 @@ start:
 
 stop:
 	systemctl --user stop stack.target
+
+copy-root-cert:
+	cp ~/.local/share/caddy/pki/authorities/local/root.crt ./public/
