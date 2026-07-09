@@ -1,5 +1,6 @@
 [Unit]
 Description=Music Streaming
+PartOf=stack.target
 
 [Container]
 Image=docker.io/deluan/navidrome:latest
@@ -8,4 +9,4 @@ Volume=navidrome-data:/data
 Volume=%h/.data/music:/music:Z
 
 [Install]
-WantedBy=default.target
+WantedBy=stack.target

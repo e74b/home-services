@@ -1,8 +1,9 @@
 [Unit]
 Description=Git Version Control Server
+PartOf=stack.target
 
 [Install]
-WantedBy=default.target
+WantedBy=stack.target
 
 [Container]
 ContainerName=forgejo
@@ -15,6 +16,3 @@ Volume=forgejo-data:/data
 
 [Service]
 Restart=always
-
-[Install]
-WantedBy=default.target

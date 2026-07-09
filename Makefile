@@ -2,19 +2,22 @@
 
 base:
 	mkdir -p ~/.config/containers/systemd/
+	mkdir -p ~/.config/systemd/user/
 	mkdir -p ~/.data/music
 
 link: base
 	stow -S -t ~/.config/containers/systemd/ quadlets 
+	stow -S -t ~/.config/systemd/user/ services
 
 unlink: base
-	stow -D -t ~/.config/containers/systemd/ quadlets 
+	stow -D -t ~/.config/containers/systemd/ quadlets
+	stow -D -t ~/.config/systemd/user/ services
 
 reload:
 	systemctl --user daemon-reload
 
 start:
-	systemctl --user start navidrome
+	systemctl --user start stack
 
 stop:
-	systemctl --user stop navidrome
+	systemctl --user stop stack
