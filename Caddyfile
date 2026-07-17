@@ -23,6 +23,10 @@ cockpit.e74b.net {
 	}
 }
 
+copyparty.e74b.net {
+  reverse_proxy http://127.0.0.1:3923 
+}
+
 http://cert.e74b.net http://* {
 	root * ./public
 	file_server
